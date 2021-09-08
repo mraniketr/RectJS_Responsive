@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import DOMPurify from "dompurify";
-import demoHtml from "./demoHtml";
+import DemoHtml from "./demoHtml";
 // import demoHtml2 from "./demo.html";
 
 export default function EXTmodule() {
-  const myHTML = demoHtml();
-  const mySafeHTML = DOMPurify.sanitize(myHTML);
   const [show, setShow] = useState(false);
+
+  const myHTML = DemoHtml();
+  const mySafeHTML = DOMPurify.sanitize(myHTML);
+
   return (
     <>
       <button

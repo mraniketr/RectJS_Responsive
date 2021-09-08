@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-export default function demoHtml() {
-  // const res = await fetch("http://127.0.0.1:5500/src/Components/demo.html");
+export default function DemoHtml() {
+  const [html, sethtml] = useState("");
 
-  // console.log(res);
-
-  return `<div style="background-color:powderblue;">
-    <H1>Hello from ext html</H1>
-    <p id="demo"></p>
-</div>`;
+  fetch("http://localhost:8080/htmldata", {
+    method: "GET",
+    headers: {
+      "Content-Type": "text/html",
+    },
+  })
+    // .then((response) => response.json())
+    .then((res) => res.text())
+    .then((x) => sethtml(x));
+  return html;
 }

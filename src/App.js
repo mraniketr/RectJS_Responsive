@@ -9,6 +9,7 @@ import EXTmodule from "./Components/EXTmodule";
 function App() {
   const [width, setWindowWidth] = useState(0);
   const [device, setDevice] = useState(false);
+
   useEffect(() => {
     updateDimensions();
 
