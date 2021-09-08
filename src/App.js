@@ -28,9 +28,9 @@ function App() {
   return (
     <div className="App">
       <Slider device={device} title="Special title treatment" />
-      <Sidebar device={device} />
+      {/* <Sidebar device={device} /> */}
       {/* <div style={{ margin: "500px" }}></div> */}
-      {/* <FormTemplate device={device} /> */}
+      <FormTemplate device={device} />
     </div>
   );
 }
