@@ -4,6 +4,7 @@ import "./App.css";
 import Slider from "./Components/Slider";
 import FormTemplate from "./Components/FormTemplate";
 import Sidebar from "./Components/Sidebar";
+import EXTmodule from "./Components/EXTmodule";
 
 function App() {
   const [width, setWindowWidth] = useState(0);
@@ -18,7 +19,7 @@ function App() {
     const width = window.innerWidth;
 
     setWindowWidth(width);
-    if (width > 500) {
+    if (width > 600) {
       setDevice(true);
     } else {
       setDevice(false);
@@ -26,11 +27,15 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Slider device={device} title="Special title treatment" />
-      {/* <Sidebar device={device} /> */}
+    <div className="App" style={{ display: "flex" }}>
+      <div style={{ display: "flex", flexDirection: "column", flex: 2 }}>
+        <Slider device={device} title="This is a dynamic text" />
+        <EXTmodule />
+      </div>
+      <Sidebar device={device} />
       {/* <div style={{ margin: "500px" }}></div> */}
-      <FormTemplate device={device} />
+
+      {/* <FormTemplate device={device} /> */}
     </div>
   );
 }
